@@ -17,6 +17,7 @@ Create a  REST API for a retail website that includes the following capabilities
 1. Clone the repo
 2. Install node.js
 3. In the terminal type in each bullet below:
+</br>
   `• npm install
   • use schema.sql as source
   • npm run seed
