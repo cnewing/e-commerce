@@ -2,7 +2,9 @@ const router = require("express").Router();
 const { json } = require("express/lib/response");
 const { Category, Product } = require("../../models");
 
+
 // The `/api/categories` endpoint
+
 
 router.get("/", async (req, res) => {
   // find all categories
@@ -13,6 +15,8 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 // F I N D  B Y  I D
 router.get("/:id", async (req, res) => {
   // find one category by its `id` value
@@ -35,6 +39,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
 // C R E A T E  C A T E G O R Y
 router.post("/", async (req, res) => {
   try {
@@ -44,6 +49,7 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 // U P D A T E  C A T E G O R Y  B Y  I D
 router.put("/:id", (req, res) => {
@@ -60,6 +66,7 @@ router.put("/:id", (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // D E L E T E  C A T E G O R Y  B Y  I D
 router.delete("/:id", (req, res) => {
