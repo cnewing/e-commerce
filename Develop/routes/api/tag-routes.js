@@ -5,12 +5,28 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', (req, res) => {
   // find all tags
-  // be sure to include its associated Product data
+  try {
+    const tag_Data = await Tag.FindAll({
+      include: [
+        {
+          model: Product,
+          through: ProductTag,
+          attributes: ["id", "product_name", "price", "stock"],
+        },
+      ],
 });
 
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
-  // be sure to include its associated Product data
+  try {
+    const tag_Data = await Tag.findByPk(req.params.id, {
+      include: [
+        {
+          model: Product,
+          through: ProductTag,
+          attributes: ["id", "product_name", "price", "stock"],
+        },
+      ],
 });
 
 router.post('/', (req, res) => {
