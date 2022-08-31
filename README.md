@@ -4,13 +4,18 @@
 Create a  REST API for a retail website that includes the following capabilities:
 
 • Create categories, products, tags
+</br>
 • View categories, products, tags
+</br>
 • Update categories, products, & tags
+</br>
 • Delete entries from the database
 
 ## Tools
 • Express
+</br>
 • MySQL
+</br>
 • Node
 
 ## Installation
