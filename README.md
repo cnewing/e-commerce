@@ -18,10 +18,13 @@ Create a  REST API for a retail website that includes the following capabilities
 2. Install node.js
 3. In the terminal type in each bullet below:
 </br>
-  `• npm install
+  • npm install
+  </br>
   • use schema.sql as source
+  </br>
   • npm run seed
-  • npm start`
+  </br>
+  • npm start
   
 Usage
 npm start
