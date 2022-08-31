@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { json } = require('express/lib/response');
 const { Tag, Product, ProductTag } = require('../../models');
 
 
@@ -16,6 +17,13 @@ router.get('/', (req, res) => {
           attributes: ["id", "product_name", "price", "stock"],
         },
       ],
+});
+
+res.status(200).json(tag_Data);
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 
@@ -76,6 +84,19 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
+  try {
+    const tag_Data = await Tag.destroy(req.body, {
+      where: { id: req.params.id },
+    });
+    if (!tag_Data) {
+      res.status(404).json({ message: "Cannot delete! No tag found with this ID!" });
+      return;
+    }
+    res.status(200).json(tag_Data);
+  } catch (err) {
+    console.log(ERROR);
+    res.status(500).json(err);
+  }
 });
 
 
