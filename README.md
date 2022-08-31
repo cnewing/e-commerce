@@ -25,9 +25,6 @@ Create a  REST API for a retail website that includes the following capabilities
   • npm run seed
   </br>
   • npm start
-  
-Usage
-npm start
 
 ## Contributtion
 
